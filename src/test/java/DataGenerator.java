@@ -1,10 +1,8 @@
-
-
 import com.github.javafaker.Faker;
 import lombok.Value;
-import lombok.val;
-import java.time.format.DateTimeFormatter;
+
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Random;
 
@@ -25,13 +23,11 @@ public class DataGenerator {
         return cities[new Random().nextInt(cities.length)];
     }
 
-
     public static String generateName(String locale) {
         // TODO: добавить логику для объявления переменной name и задания её значения, для генерации можно
         // использовать Faker
-        var faker = new Faker (new Locale (locale));
+        var faker = new Faker(new Locale(locale));
         return faker.name().lastName() + "  " + faker.name().firstName();
-
     }
 
     public static String generatePhone(String locale) {
@@ -57,11 +53,13 @@ public class DataGenerator {
         String city;
         String name;
         String phone;
+
         public UserInfo(String city, String name, String phone) {
             this.city = city;
             this.name = name;
             this.phone = phone;
         }
+
         public String getCity() {
             return city;
         }
